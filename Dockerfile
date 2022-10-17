@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 # Labels section
 LABEL org.opencontainers.image.source https://github.com/jorgecar/codespace
