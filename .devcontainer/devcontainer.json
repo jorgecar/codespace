@@ -1,0 +1,17 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "Docker in Docker",
+	"runArgs": ["--init", "--privileged"],
+	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"overrideCommand": false,
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
+	},
+
+	"extensions": [
+		"ms-azuretools.vscode-docker"
+	],
+
+	"remoteUser": "vscode"
+}
