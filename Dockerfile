@@ -45,7 +45,7 @@ RUN apk add --no-cache \
         make
 
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # User & groups settings
 RUN set -x \
