@@ -44,6 +44,9 @@ RUN apk add --no-cache \
         zsh \
         make
 
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # User & groups settings
 RUN set -x \
     && addgroup -S dockremap \
