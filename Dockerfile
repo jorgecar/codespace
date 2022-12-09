@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.17
 
 # Labels section
 LABEL org.opencontainers.image.source https://github.com/jorgecar/codespace
@@ -47,6 +47,10 @@ RUN apk add --no-cache \
 
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+RUN chsh -s $(which zsh)
+
+ENV TERMINAL_SHELL /usr/bin/zsh
+
 # User & groups settings
 RUN set -x \
     && addgroup -S dockremap \
@@ -67,4 +71,4 @@ RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh
 
 VOLUME /var/lib/docker
 ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
-CMD []
+CMD [zsh]
