@@ -1,10 +1,9 @@
-FROM alpine:3.17
+FROM mcr.microsoft.com/vscode/devcontainers/base:alpine-3.16
 
 # Labels section
 LABEL org.opencontainers.image.source https://github.com/jorgecar/codespace
 
 # Build options
-ARG USERNAME=vscode
 ARG DIND_COMMIT=42b1175eda071c0e9121e1d64345928384a93df1
 
 # Forced environement values
@@ -13,53 +12,15 @@ ENV TZ "Europe/Madrid"
 
 # Packages installation
 RUN apk add --no-cache \
-        ca-certificates \
-        coreutils \
-        curl \
-        docker \
-        docker-cli-compose \
-        git \
-        github-cli \
-        gnupg \
-        grep \
-        jq \
-        less \
-        lsof \
-        man-pages \
-        mandoc \
-        nano \
-        net-tools \
-        openssh-client \
-        openssl \
-        procps \
-        sed \
-        shadow \
-        sudo \
-        terraform \
-        tzdata \
-        unzip \
-        util-linux \
-        vim \
-        zip \
-        zsh \
-        make
-
-
-RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-ENV TERMINAL_SHELL /usr/bin/zsh
+    docker \
+    make
 
 # User & groups settings
 RUN set -x \
     && addgroup -S dockremap \
     && adduser -S -G dockremap dockremap \
     && echo 'dockremap:165536:65536' >> /etc/subuid \
-    && echo 'dockremap:165536:65536' >> /etc/subgid \
-    && adduser -D -s /usr/bin/zsh $USERNAME \
-    && addgroup $USERNAME docker \
-    && mkdir -p /etc/sudoers.d \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+    && echo 'dockremap:165536:65536' >> /etc/subgid
 
 # Docker-in-Docker setup
 RUN wget "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind" -O /usr/local/bin/dind \
