@@ -71,4 +71,4 @@ RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh
 
 VOLUME /var/lib/docker
 ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
-CMD [zsh]
+CMD []
