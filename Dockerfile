@@ -12,8 +12,36 @@ ENV TZ "Europe/Madrid"
 
 # Packages installation
 RUN apk add --no-cache \
-    docker \
-    make
+        ca-certificates \
+        coreutils \ 
+        curl \
+        docker \
+        docker-cli-compose \
+        git \
+        github-cli \
+        gnupg \
+        grep \
+        jq \
+        less \
+        lsof \
+        man-pages \
+        mandoc \
+        nano \
+        net-tools \
+        openssh-client \
+        openssl \
+        procps \
+        sed \
+        shadow \
+        sudo \
+        terraform \
+        tzdata \
+        unzip \
+        util-linux \
+        vim \
+        zip \
+        zsh \
+        make
 
 # User & groups settings
 RUN set -x \
