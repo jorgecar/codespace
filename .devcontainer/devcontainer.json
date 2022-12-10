@@ -35,5 +35,5 @@
 		"MehediDracula.php-namespace-resolver"
 	],
 	"remoteUser": "vscode",
-	"onCreateCommand": "bash ${CODESPACE_VSCODE_FOLDER}/.devcontainer/.commands/OnCreateCommand.sh"
+	"onCreateCommand": "bash .devcontainer/commands/OnCreateCommand.sh"
 }
