@@ -10,7 +10,25 @@
 		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
 	},
 	"extensions": [
-		"ms-azuretools.vscode-docker"
+		"ms-azuretools.vscode-docker",
+		"codingyu.laravel-goto-view",
+		"amiralizadeh9480.laravel-extra-intellisense",
+		"shufo.vscode-blade-formatter",
+		"EditorConfig.EditorConfig",
+		"mikestead.dotenv",
+		"naoray.laravel-goto-components",
+		"glitchbl.laravel-create-view",
+		"IHunte.laravel-blade-wrapper",
+		"cjhowe7.laravel-blade",
+		"austenc.laravel-blade-spacer",
+		"mohamedbenhida.laravel-intellisense",
+		"ctf0.laravel-goto-controller",
+		"georgykurian.laravel-ide-helper",
+		"open-southeners.laravel-pint",
+		"msamgan.laravel-pint-vscode",
+		"bmewburn.vscode-intelephense-client",
+		"MehediDracula.php-namespace-resolver",
+		"eamodio.gitlens"
 	],
 	"remoteUser": "vscode"
 }
