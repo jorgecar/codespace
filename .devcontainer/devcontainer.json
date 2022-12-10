@@ -12,7 +12,8 @@
 	"overrideCommand": false,
 	"build": {
 		"dockerfile": "./Dockerfile",
-		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
+		"cacheFrom": "ghcr.io/jorgecar/codespace:main",
+		"context": "."
 	},
 	"extensions": [
 		"ms-azuretools.vscode-docker",
