@@ -26,6 +26,9 @@ RUN wget "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/di
 COPY library-scripts/dockerd-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh
 
+RUN curl -s https://getcomposer.org/installer | php
+RUN alias composer='php composer.phar'
+
 VOLUME ["/var/lib/docker"]
 ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
 CMD []
