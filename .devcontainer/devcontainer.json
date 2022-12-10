@@ -11,7 +11,7 @@
 	],
 	"overrideCommand": false,
 	"build": {
-		"dockerfile": "Dockerfile",
+		"dockerfile": "./Dockerfile",
 		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
 	},
 	"extensions": [
