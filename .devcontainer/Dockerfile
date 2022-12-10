@@ -27,6 +27,9 @@ RUN wget "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/di
 COPY library-scripts/dockerd-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh
 
+ENV COMPOSER_HOME="/workspaces/.codespaces/.persistedshare/.config/composer"
+ENV COMPOSER_CACHE_DIR="/workspaces/.codespaces/.persistedshare/.cache/composer"
+
 VOLUME ["/var/lib/docker"]
 ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
 CMD []
