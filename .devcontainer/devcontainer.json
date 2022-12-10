@@ -1,11 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/alpine
 {
-	"name": "Alpine",
+	"name": "Alpine Docker in Docker",
+	"runArgs": ["--init", "--privileged"],
+	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"overrideCommand": false,
 	"build": {
-		"dockerfile": "../Dockerfile"
+		"dockerfile": "../Dockerfile",
+		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
 	},
 	"extensions": [
 		"ms-azuretools.vscode-docker"
-	]
+	],
+	"remoteUser": "vscode"
 }
