@@ -2,11 +2,16 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/alpine
 {
 	"name": "Alpine Docker in Docker",
-	"runArgs": ["--init", "--privileged"],
-	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"runArgs": [
+		"--init",
+		"--privileged"
+	],
+	"mounts": [
+		"source=dind-var-lib-docker,target=/var/lib/docker,type=volume"
+	],
 	"overrideCommand": false,
 	"build": {
-		"dockerfile": "../Dockerfile",
+		"dockerfile": "Dockerfile",
 		"cacheFrom": "ghcr.io/jorgecar/codespace:main"
 	},
 	"extensions": [
@@ -27,8 +32,8 @@
 		"open-southeners.laravel-pint",
 		"msamgan.laravel-pint-vscode",
 		"bmewburn.vscode-intelephense-client",
-		"MehediDracula.php-namespace-resolver",
-		"eamodio.gitlens"
+		"MehediDracula.php-namespace-resolver"
 	],
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"onCreateCommand": "bash ${CODESPACE_VSCODE_FOLDER}/.devcontainer/.commands/OnCreateCommand.sh"
 }
