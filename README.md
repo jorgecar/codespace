@@ -54,3 +54,8 @@ Then you need allowing your codespace to access a private image registry. It is 
 - GHCR_CONTAINER_REGISTRY_PASSWORD: (generate token with `read:packages` access)
 - GHCR_CONTAINER_REGISTRY_SERVER: ghcr.io
 - GHCR_CONTAINER_REGISTRY_USER: your user name
+
+# Required files
+Copy the file `.devcontainer/commands/OnCreateCommand.sh` from this repository and paste it at the same path in your repository. 
+
+In this file you can define any command that you need to get ready your codespace.
