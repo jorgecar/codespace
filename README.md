@@ -51,6 +51,6 @@ Then you need allowing your codespace to access a private image registry. It is 
 
 1. Go to your `settings > secrets > codespaces`
 2. Add the follow secrets:
-GHCR_CONTAINER_REGISTRY_PASSWORD: (generate token with `read:packages` access)
-GHCR_CONTAINER_REGISTRY_SERVER: ghcr.io
-GHCR_CONTAINER_REGISTRY_USER: your user name
+- GHCR_CONTAINER_REGISTRY_PASSWORD: (generate token with `read:packages` access)
+- GHCR_CONTAINER_REGISTRY_SERVER: ghcr.io
+- GHCR_CONTAINER_REGISTRY_USER: your user name
