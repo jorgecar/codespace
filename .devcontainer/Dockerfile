@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     openssl \
     util-linux
 
-COPY --from=composer-build /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 COPY --from=php:8.2-cli-alpine /usr/local/bin/php /usr/local/bin/php
 
 RUN set -x \
