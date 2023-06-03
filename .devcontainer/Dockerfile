@@ -15,6 +15,10 @@ RUN apk add --no-cache \
 
 COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 COPY --from=php:8.2-cli-alpine /usr/local/bin/php /usr/local/bin/php
+RUN docker-php-ext-install -j$(nproc) zip bcmath pcntl
+COPY --from=php:8.2-cli-alpine /usr/local/lib/php/extensions/no-debug-non-zts-20220829/ /usr/local/lib/php/extensions/no-debug-non-zts-20220829/
+COPY --from=php:8.2-cli-alpine /usr/lib/ /usr/local/lib
+RUN docker-php-ext-enable zip bcmath pcntl
 
 RUN set -x \
     && addgroup -S dockremap \
