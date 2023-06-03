@@ -19,7 +19,7 @@ COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 COPY --from=php:8.2-cli-alpine /usr/local/bin/php /usr/local/bin/php
 COPY --from=php:8.2-cli-alpine /usr/local/lib/php/extensions/no-debug-non-zts-20220829/ /usr/local/lib/php/extensions/no-debug-non-zts-20220829/
 COPY --from=php:8.2-cli-alpine /usr/lib/ /usr/local/lib
-COPY --from=php:8.2-cli-alpine /usr/local/bin/install-php-extensions /usr/local/bin/install-php-extensions
+COPY --from=php:8.2-cli-alpine /usr/local/bin/docker-php-ext-install /usr/local/bin/docker-php-ext-install
 COPY --from=php:8.2-cli-alpine /usr/local/bin/docker-php-ext-enable /usr/local/bin/docker-php-ext-enable
 
 RUN set -x \
