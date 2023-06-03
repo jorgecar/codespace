@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:alpine-3.16
+FROM mcr.microsoft.com/vscode/devcontainers/php:8.1
 
 ARG USERNAME=vscode
 ARG DIND_COMMIT=42b1175eda071c0e9121e1d64345928384a93df1
