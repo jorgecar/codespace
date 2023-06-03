@@ -11,8 +11,10 @@ RUN apk add --no-cache \
     github-cli \
     make \
     openssl \
-    util-linux \
-    php8.2
+    util-linux
+
+COPY --from=composer-build /usr/bin/composer /usr/bin/composer
+COPY --from=php:8.2-cli-alpine /usr/local/bin/php /usr/local/bin/php
 
 RUN set -x \
     && addgroup -S dockremap \
