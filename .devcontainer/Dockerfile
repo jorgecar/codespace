@@ -11,8 +11,6 @@ RUN apk add --no-cache \
     github-cli \
     make \
     openssl \
-    libicu-dev \
-    libmcrypt-dev \
     util-linux
 
 COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
