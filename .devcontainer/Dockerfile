@@ -1,5 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/php:8.1
-
+FROM mcr.microsoft.com/vscode/devcontainers/base:alpine-3.16
 ARG USERNAME=vscode
 ARG DIND_COMMIT=42b1175eda071c0e9121e1d64345928384a93df1
 
@@ -12,7 +11,8 @@ RUN apk add --no-cache \
     github-cli \
     make \
     openssl \
-    util-linux
+    util-linux \
+    php8.2
 
 RUN set -x \
     && addgroup -S dockremap \
